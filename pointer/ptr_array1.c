@@ -17,6 +17,7 @@ int main()
     // Square of each element:
     // 4, 16, 1, 9, 49
     int array[5] = {2, 3, 4, 5};
-    
-
+    int *ptr1 = &array[0];
+    int sqr = *ptr1 * *ptr1;
+    printf("%u", sqr);
 }
