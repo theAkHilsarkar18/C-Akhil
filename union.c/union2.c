@@ -11,8 +11,6 @@ struct School
     };
 };
 
-
-
 int main()
 {
     struct School s1;
