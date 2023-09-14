@@ -8,12 +8,16 @@ int main()
 
     for(int i=0; i<length; i++)
     {
-        for(int j=i+1; j<length; j++)
+        if(max<a[i])
         {
-            if(a[i]>a[j])
-            {   
-                max = a[i];
-            }
+            max = a[i];
+        }
+    }
+    for(int i=0; i<length; i++)
+    {
+        if(max>a[i])
+        {
+            max = a[i];
         }
     }
     printf("maximum element is : %d",max);
