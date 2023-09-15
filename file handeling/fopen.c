@@ -1,16 +1,17 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 int main()
 {
-    FILE *fptr;
+    FILE *filePointer;
+    filePointer = fopen("newfile.txt","r"); // read file 
+    filePointer = fopen("filename.txt","r"); // when we try to read already exist file
 
-    fptr = fopen("filename.txt","r");
-
-    if(fptr==NULL)
+    if(filePointer==NULL)
     {
-        printf("file is not opened");
-        exit(0);
+        printf("file is not opened !");
     }
-
-    return 0;
+    else{
+        printf("file opened successfully !");
+    }
 }
