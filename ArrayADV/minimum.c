@@ -3,6 +3,7 @@
 int main()
 {
     int a[] = {34,56,34,5,6,7,8,9,0,-90,7,2,4,5,67,90,3,1,35,5,6,0};
+    
     int length = sizeof(a)/sizeof(a[0]);
     int min = a[0];
 
