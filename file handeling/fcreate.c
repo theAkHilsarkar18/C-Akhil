@@ -35,5 +35,11 @@ int main()
         printf("file opened !");
     }
 
+    for (int i = 1; i < 10; i++)
+    {
+        fprintf(filePointer,"%d ",i);
+    }
+    
+
     return 0;
 }
