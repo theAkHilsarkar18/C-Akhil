@@ -23,5 +23,17 @@
 #include<stdlib.h>
 int main()
 {
+    FILE *filePointer;
+
+    filePointer = fopen("openfile.txt","w");
+
+    if(filePointer == NULL)
+    {
+        printf("file not opened !");
+    }
+    else{
+        printf("file opened !");
+    }
+
     return 0;
 }
