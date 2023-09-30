@@ -2,16 +2,18 @@
 // WAP to find area of rectangle
 
 #include<stdio.h>
-main()
+int main()
 {
-	int l,b,area;
+	int r;
+	float a;
+	const float pi = 3.14;
 	
-	printf("Enter length of rectangle : ");
-	scanf("%d",&l);
-	printf("Enter width of rectangle : ");
-	scanf("%d",&b);
+	printf("Enter the valeu of r : ");
+	scanf("%d",&r);
 	
-	area = 2*l*b;
 	
-	printf("Area of rectangle is : %d",area);
+	a = pi*r*r; // 3.14 * 2 *2 = 12.14
+	
+	printf("Area of circle is : %.2f",a);
+	return 0;
 }
