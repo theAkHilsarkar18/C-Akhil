@@ -1,19 +1,18 @@
 
 // WAP to find area of rectangle
 
+int factorial(int n)
+{
+	if(n==1)
+	{
+		return 1;
+	}
+	return n * factorial(n-1);
+}
+
 #include<stdio.h>
 int main()
 {
-	int r;
-	float a;
-	const float pi = 3.14;
-	
-	printf("Enter the valeu of r : ");
-	scanf("%d",&r);
-	
-	
-	a = pi*r*r; // 3.14 * 2 *2 = 12.14
-	
-	printf("Area of circle is : %.2f",a);
-	return 0;
+	int ans = factorial(5);
+	printf("ans is %d",ans);
 }
