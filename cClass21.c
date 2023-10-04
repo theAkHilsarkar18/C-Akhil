@@ -2,24 +2,42 @@
 
 
 
-
 #include<stdio.h>
-
 int main()
 {
-	//  0,1,1,2,3,5,8,13...fibbonachi series
-	int first = 0;
-	int second = 1;
-	int present;
-	printf("0 1 ");
-	for(int i=1; i<=10; i++)
+	int a[10] = {11,2,3,4,2,3,2,3,78,1};
+	int max = 0;
+
+	for(int i=0; i<10; i++)
 	{
-		present = first + second;
-		printf("%d ",present);
-		first = second;
-		second = present;
+		if(a[i] > max)
+		{
+			max = a[i];
+		}
 	}
+
+	printf("max is %d",max);
+	return 0;
 }
+
+
+// #include<stdio.h>
+
+// int main()
+// {
+// 	//  0,1,1,2,3,5,8,13...fibbonachi series
+// 	int first = 0;
+// 	int second = 1;
+// 	int present;
+// 	printf("0 1 ");
+// 	for(int i=1; i<=10; i++)
+// 	{
+// 		present = first + second;
+// 		printf("%d ",present);
+// 		first = second;
+// 		second = present;
+// 	}
+// }
 
 
 
