@@ -1,24 +1,57 @@
 
 
-
-
 #include<stdio.h>
+
 int main()
 {
-	int a[10] = {11,2,3,4,2,3,2,3,78,1};
-	int max = 0;
-
-	for(int i=0; i<10; i++)
+	int a[2][3] = {{1,2,3},{1,2,3}};
+	int sum = 0;
+	int b[3][3] = {{1,2,3},{1,2,3},{1,2,3}};
+	
+	for(int i=0; i<3; i++)
 	{
-		if(a[i] > max)
+		for(int j=0; j<3; j++)
 		{
-			max = a[i];
+			printf("enter the value : ");
+			scanf("%d",&b[i][j]);
 		}
+		
 	}
 
-	printf("max is %d",max);
-	return 0;
+	// int x = 2;
+	// for(int i=0; i<3; i++)
+	// {
+	// 	sum = sum + b[i][x];
+	// 	x--;
+	// }
+
+	printf("sum is %d",sum);
+
 }
+
+
+
+
+
+
+
+// #include<stdio.h>
+// int main()
+// {
+// 	int a[10] = {11,2,3,4,2,3,2,3,78,1};
+// 	int max = 0;
+
+// 	for(int i=0; i<10; i++)
+// 	{
+// 		if(a[i] > max)
+// 		{
+// 			max = a[i];
+// 		}
+// 	}
+
+// 	printf("max is %d",max);
+// 	return 0;
+// }
 
 
 // #include<stdio.h>
