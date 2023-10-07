@@ -2,7 +2,6 @@
 
 int main()
 {
-
     int x;
     for(int i=1; i<=5; i++)
     {
@@ -13,6 +12,6 @@ int main()
         }
         printf("\n");
     }
-
     return 0;
 }
+
