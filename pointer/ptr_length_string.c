@@ -1,9 +1,14 @@
 #include <stdio.h>
 int main()
 {
-    char name[10] = "Akhil";
-    int len = strlen(name);
-    int *ptr = &name[0];
+    // wap to find length of string using ptr
 
-    printf("%d", *ptr);
+    char name[10] = "Red&White";
+    int *ptr = name[0];
+    int count = 0;
+
+    for(int i=0; name[i]!='\0'; i++)
+    {
+        
+    }
 }
