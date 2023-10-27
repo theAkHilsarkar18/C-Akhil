@@ -1,45 +1,60 @@
-// #include<stdio.h>
-// #include<stdio.h>
-
-// int main()
-// {
-//     FILE *filePoniter;
-//      when yout want to create a file
-
-//     filePoniter = fopen("newfile.txt","w"); // write file
-
-//     if(filePoniter==NULL)
-//     {
-//         printf("file is not created !");
-//     }
-//     else{
-//         printf("file created successfully !");
-//     }
-// }
-
-
-
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 int main()
 {
     FILE *filePointer;
+    char name[10];
+    filePointer = fopen("file.txt","w");
 
-    filePointer = fopen("openfile.txt","w");
-
-    if(filePointer == NULL)
+    if(filePointer==NULL)
     {
-        printf("file not opened !");
+        printf("file not open !");
     }
-    else{
+    else
+    {
         printf("file opened !");
     }
 
-    for (int i = 1; i < 10; i++)
-    {
-        fprintf(filePointer,"%d ",i);
-    }
-    
+    printf("\nEnter your name : ");
+    gets(name);
+    fprintf(filePointer,"%s",name);
+
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+// #include<stdio.h>
+// #include<stdlib.h>
+// int main()
+// {
+//     FILE *filePointer;
+
+//     filePointer = fopen("openfile.txt","w");
+
+//     if(filePointer == NULL)
+//     {
+//         printf("file not opened !");
+//     }
+//     else{
+//         printf("file opened !");
+//     }
+
+//     for (int i = 1; i < 10; i++)
+//     {
+//         fprintf(filePointer,"%d ",i);
+//     }
+    
+
+//     return 0;
+// }
