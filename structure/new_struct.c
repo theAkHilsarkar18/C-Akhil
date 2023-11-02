@@ -10,7 +10,6 @@ struct Student
     char name[10];
 };
 
-
 int main()
 {   
     struct Student s1 = {"Akhil"};
