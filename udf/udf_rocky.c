@@ -6,6 +6,7 @@ int mantri()
     return gunPart1;
 }
 
+
 int waiter()
 {
     int gunPart2 = 10;
