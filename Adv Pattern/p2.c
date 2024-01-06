@@ -23,7 +23,6 @@ int main()
             x = x + j;
         }
         y = y + i;
-        x = 1;
         x = i + y;
         printf("\n");
     }
