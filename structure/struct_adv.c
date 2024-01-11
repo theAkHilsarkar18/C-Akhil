@@ -32,15 +32,15 @@ int main()
 		strcpy(s[0].stu_name,a);
  		
 		printf("Enter the course of %dst student : \n",i+1);
-		scanf("%[^\n]s",b);
+		scanf("%[^\n]s",&b);
 		strcpy(s[0].stu_name,b);
  		
 		printf("Enter the city of %dst student : \n",i+1);
-		scanf("%[^\n]s",c);
+		scanf("%[^\n]s",&c);
 		strcpy(s[0].stu_name,c);
  		
 		printf("Enter the school of %dst student : \n",i+1);
-		scanf("%[^\n]s",d);
+		scanf("%[^\n]s",&d);
 		strcpy(s[0].stu_name,d);
  	
  	
