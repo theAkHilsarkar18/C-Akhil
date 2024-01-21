@@ -1,127 +1,87 @@
 #include <stdio.h>
-
-struct name_birth
+struct age
 {
-    char name[50];
-    int birth_date;
-    int birth_month;
-    int birth_year;
+    int birthdate;
+    char a[50];
 };
-
-void birth(int birth_date, int birth_month, int birth_year)
+void birthdate(int date, int month, int year)
 {
+    Day(date, month, year);
+}
 
-    if (birth_year >= 1924 && birth_year <= 2024)
+void Day(int date, int month, int year)
+{
+    struct age user;
+
+    if (date >= 1 && date <= 31)
     {
-        if (birth_year % 4 == 0)
-        {
-            if (birth_month == 02)
-            {
-                if (birth_date >= 1 && birth_date <= 29)
-                {
-                    printf("Birth Date : %d/%d/%d\n", birth_date, birth_month, birth_year);
-                }
-                else
-                {
-                    printf("your date is not allow date between 1 to 29\n");
-                }
-            }
-            else
-            {
-                printf("Enter the correct month\n");
-            }
-        }
-        else
-        {
-            if (birth_month >= 01 && birth_month <= 12)
-            {
-                if (birth_month % 2 == 1)
-                {
-                    if (birth_date >= 1 && birth_date <= 31)
-                    {
-                        printf("Birth Date : %d/%d/%d\n", birth_date, birth_month, birth_year);
-                    }
-                    else
-                    {
-                        printf("your date is not allow date between 1 to 31\n");
-                    }
-                }
-                else if (birth_month == 02)
-                {
-                    if (birth_date >= 1 && birth_date <= 28)
-                    {
-                        printf("Birth Date : %d/%d/%d\n", birth_date, birth_month, birth_year);
-                    }
-                    else
-                    {
-                        printf("your date is not allow date between 1 to 28\n");
-                    }
-                }
-                else
-                {
-                    if (birth_date >= 1 && birth_date <= 30)
-                    {
-                        printf("Birth Date : %d/%d/%d\n", birth_date, birth_month, birth_year);
-                    }
-                    else
-                    {
-                        printf("your date is not allow date between 1 to 30\n");
-                    }
-                }
-            }
-        }
+        Month(month, year);
     }
     else
     {
-        printf("Enter correct input !!\n");
+        printf("Error : enter the valid date");
+        main();
     }
 }
-
-void age(int birth_year)
+void Month(int month, int year)
 {
-    int i;
-    int age = 0;
+    struct age user;
 
-    for (i = birth_year; i < 2024; i++)
+    if (month >= 1 && month <= 12)
     {
-        age++;
+        Year(year);
     }
-    printf("Age is : %d", age);
+    else
+    {
+        printf("Error : enter the valid month");
+        main();
+    }
 }
+void Year(int year)
+{
+    struct age user;
 
+    if (year >= 1924 && year <= 2024)
+    {
+        Age(year);
+    }
+    else
+    {
+        printf("Error : enter the valid year");
+        main();
+    }
+}
+int Age(int year)
+{
+    int i, a = 0;
+    for (i = year; i < 2024; i++)
+    {
+        a++;
+    }
+    return a;
+}
 main()
 {
-    FILE *fp;
+    FILE *age;
+    age = fopen("exam.txt", "w");
+    char a[50];
+    int date, month, year;
 
-    fp = fopen("exam.txt", "w");
+    struct age user;
 
-    char name[50];
-    int birth_date;
-    int birth_month;
-    int birth_year;
+    printf("\nname:");
+    scanf(" %[^\n]s", &user.a);
 
-    struct name_birth name_num[3];
+    printf("enter birthdate :");
+    scanf("%d-%d-%d", &date, &month, &year);
 
-    int i;
+    birthdate(date, month, year);
+    int x = Age(year);
+    printf("\nName : %s\n", user.a);
+    printf("Age : %d\n", x);
+    printf("Birthdate : %d-%d-%d\n", date, month, year);
 
-    for (i = 0; i < 1; i++)
-    {
-        printf("Enter the name : ");
-        scanf(" %[^\n]s", &name);
-        printf("Enter the birth date : ");
-        scanf("%d", &birth_date);
-        printf("Enter the birth month : ");
-        scanf("%d", &birth_month);
-        printf("Enter the birth year : ");
-        scanf("%d", &birth_year);
-    }
-
-    for (i = 0; i < 1; i++)
-    {
-        fprintf(fp, "Name : %s\n", name_num[i].name);
-        birth(birth_date, birth_month, birth_year);
-        fprintf(fp, "Birth Date is : %d/%d/%d", birth_date, birth_month, birth_year);
-        age(birth_year);
-        fprintf(fp, "Age is : %d", age);
-    }
+    fprintf(age, "\nName : %s\n", user.a);
+    fprintf(age, "Age : %d\n", x);
+    fprintf(age, "Birthdate : %d-%d-%d\n", date, month, year);
 }
