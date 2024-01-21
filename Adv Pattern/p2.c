@@ -8,31 +8,21 @@ int main()
     {
         for (int k = 1; k < i; k++)
         {
-            printf("  ");
+            printf("   ");
         }
         for (int j = i; j <= 10; j++)
         {
-            if ((x >= 11 && x <= 15) && (x != 14))
+
+            if(x>=0 && x<=9)
             {
-                printf(" %d ", x);
+                printf("%d  ", x);
             }
-            else if ((x >= 16 && x <= 20))
-            {
-                printf(" %d ", x);
-            }
-            else if (x == 21)
-            {
-                printf("   %d ", x);
-            }
-            else
-            {
+            else{
                 printf("%d ", x);
             }
-
             x = x + j;
         }
         y = y + i;
-        x = 1;
         x = i + y;
         printf("\n");
     }
