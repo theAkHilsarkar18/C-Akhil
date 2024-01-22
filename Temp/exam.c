@@ -1,87 +1,71 @@
-#include <stdio.h>
-struct age
+#include<stdio.h>
+#include<string.h>
+struct deatil
 {
-    int birthdate;
-    char a[50];
+	char name[50];
+	int month;
+	int date;
+	int year;	
 };
-void birthdate(int date, int month, int year)
+int main()
 {
-    Day(date, month, year);
+	struct deatil s[3];
+	int i,x,k;
+	int age=0;
+	FILE *fp;
+	fp = fopen("new.txt","w");
+	
+	
+	for(i=0;i<3;i++)
+	{
+	age=0;
+	start:
+	printf("enter your name :");
+	scanf(" %[^\n]s",s[i].name);
+	printf("enter your date :");
+	scanf(" %d",&s[i].date);
+	printf("enter your month :");
+	scanf(" %d",&s[i].month);
+	printf("enter your year :");
+	scanf(" %d",&s[i].year);
+	
+	
+	if(s[i].date>=1&&s[i].date<=31)
+	{
+		if(s[i].month>=1&&s[i].month<=12)
+		{
+			if(s[i].year>=1924&&s[i].year<=2024)
+			{
+				for(x=s[i].year;x<=2024;x++)
+				{
+					age++;
+				}
+			}
+			else
+			{
+				printf("enter a valid year");
+				goto start;
+			}
+		}
+		else
+		{
+			printf("enter a valid month");
+			goto start;
+		}	
+	}
+	else
+	{
+		printf("enter a valid date");
+		goto start;
+	}
+		printf("age is :%d\n",age);
+		fprintf(fp,"Name : %s\n",s[i].name);
+		fprintf(fp,"Birth-Date : %d/%d/%d\n",s[i].date,s[i].month,s[i].year);
+		fprintf(fp,"Age : %d years\n\n",age);	
 }
 
-void Day(int date, int month, int year)
-{
-    struct age user;
-
-    if (date >= 1 && date <= 31)
-    {
-        Month(month, year);
-    }
-    else
-    {
-        printf("Error : enter the valid date");
-        main();
-    }
-}
-void Month(int month, int year)
-{
-    struct age user;
-
-    if (month >= 1 && month <= 12)
-    {
-        Year(year);
-    }
-    else
-    {
-        printf("Error : enter the valid month");
-        main();
-    }
-}
-void Year(int year)
-{
-    struct age user;
-
-    if (year >= 1924 && year <= 2024)
-    {
-        Age(year);
-    }
-    else
-    {
-        printf("Error : enter the valid year");
-        main();
-    }
-}
-int Age(int year)
-{
-    int i, a = 0;
-    for (i = year; i < 2024; i++)
-    {
-        a++;
-    }
-    return a;
-}
-main()
-{
-    FILE *age;
-    age = fopen("exam.txt", "w");
-    char a[50];
-    int date, month, year;
-
-    struct age user;
-
-    printf("\nname:");
-    scanf(" %[^\n]s", &user.a);
-
-    printf("enter birthdate :");
-    scanf("%d-%d-%d", &date, &month, &year);
-
-    birthdate(date, month, year);
-    int x = Age(year);
-    printf("\nName : %s\n", user.a);
-    printf("Age : %d\n", x);
-    printf("Birthdate : %d-%d-%d\n", date, month, year);
-
-    fprintf(age, "\nName : %s\n", user.a);
-    fprintf(age, "Age : %d\n", x);
-    fprintf(age, "Birthdate : %d-%d-%d\n", date, month, year);
+	return 0;
+		
+	
+	
 }
