@@ -1,73 +1,71 @@
 #include <stdio.h>
-#include <string.h>
 
-struct dob
+struct user
 {
-	int day, month, year;
-	char name[25];
+	int date, year;
+	char name[50];
+	int month;
 };
 main()
 {
-	FILE *dob;
-	char name[25];
-	int day, month, year;
-	struct dob D[3];
-
+	struct user s1[3];
 	int i;
+	char name[50];
 
-	for (i = 1; i <= 3; i++)
+	for (i = 0; i <= 3; i++)
 	{
-		printf("Enter your name : ");
-		scanf("%d", name);
-		strcpy(D[i].name, name);
-		printf("\nEnter the day : ");
-		scanf("%d", &D[i].day);
 
-		for (i = 1; i <= 3; i++)
+		printf("\n enter the date:");
+		scanf("%d", &s1[i].date);
+
+		printf("\n enter the name:");
+		scanf(" %c", &s1[i].name);
+
+		printf("\n enter the year:");
+		scanf("%d", &s1[i].year);
+	}
+	int age = 0;
+	int x;
+
+	FILE = *fp;
+
+	printf("data.txt", "w");
+start:
+
+	if (s1[i].date >= 1 && s1[i].date <= 32)
+	{
+		if (s1[i].month >= 1 && s1[i].month <= 12)
+
 		{
-			if (D[i].day <= 0 && D[i].day > 31)
+			if (s1[i].year >= 1924 && s1[i].year <= 2024)
 			{
-				printf("\nError!....");
+				for (x = age; s1[i] <= 2024; x++)
+				{
+					age++;
+				}
 			}
-
-			break;
-		}
-
-		printf("\nEnter the month : ");
-		scanf("%d", &D[i].month);
-
-		for (i = 1; i <= 3; i++)
-		{
-			if (D[i].month >= 0 && D[i].month > 12)
+			else
 			{
-				printf("\nError!....");
-			}
-
-			break;
-		}
-
-		printf("\nEnter the year : ");
-		scanf("%d", &D[i].year);
-
-		for (i = 1; i <= 3; i++)
-		{
-
-			if (D[i].year > 1924 && D[i].year > 2024)
-			{
-				printf("\nError!....");
+				printf("enter the valid year:");
+				goto : start;
 			}
 		}
-		break;
-
-		printf("\n");
-		printf("\n");
+		else
+		{
+			printf("enter the valid month:");
+			goto : start;
+		}
+	}
+	else
+	{
+		printf("enter the valid date:");
+		goto : start;
 	}
 
-	for (i = 1; i <= 3; i++)
-	{
-		printf("\nYour name : %s", D[i].name);
-		printf("\nBirth Date : %d", D[i].day);
-		printf("\nMonth : %d", D[i].month);
-		printf("\nYear : %d", D[i].year);
-	}
+	fprintf(fp "age is %d:\n", s1[i].age);
+	fprintf(fp "name is %c:\n", s1[i].name);
+	fprintf(fp "date is %d:\n", s1[i].date);
+	fprintf(fp "year is %d:\n", s1[i].year);
+
+	fprintf(fp "%d,%d,%d,%s", s1[i].month, s1[i].year, s1[i].date, s1[i].name);
 }
