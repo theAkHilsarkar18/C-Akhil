@@ -1,110 +1,141 @@
 #include<stdio.h>
 #include<conio.h>
 #include<string.h>
-
-struct va
+struct birthdateform
 {
-	int date,age,d,m,y;
-	char name[100];
-	
+	char name[50];
+	int birth_d[50];
+	int age;
+	int month,year,day;
 };
-
-void main()
+void Birthdateform()
 {
-	FILE *ok;
-	ok=fopen("Format.txt","w");
-	int n,i=0;
-	printf("Enter The Value Of Size Seat Of N : ");
-	scanf("%d",&n);
-	struct va s1[n];
-	char name[100];
-	n--;
-	star:
-	if(i!=n+1)
-	{
-		printf("Form Is [%d]\n",i+1);
-		gets(name);
-	}
-	printf("Enter Name : ");
-	gets(name);
-	strcpy(s1[i].name,name);
-	st:
-	printf("Enter Birthdate Date : ");
-	scanf("%d",&s1[i].d);
-	printf("Enter Birthdate Month : ");
-	scanf("%d",&s1[i].m);
-	printf("Enter Birthdate Year : ");
-	scanf("%d",&s1[i].y);
-	if(s1[i].y>=1924 && s1[i].y<=2024)
-	{
-		if(s1[i].m>=1 && s1[i].m<=12)
+	FILE *fp;
+	fp=fopen("data.txt","w");
+	struct birthdateform b1[3];
+	char name[50];
+	start:
+	int length = strlen(name);
+	int i;
+
+	int count;
+	int check=0,dayck=0,monthck=0,yearck=0,leapyearck=0;
+	int month,year,day;
+	printf("Enter day:");
+	scanf("%d",&day);
+	printf("Enter month:");
+	scanf("%d",&month);
+	printf("Enter year:");
+	scanf("%d",&year);
+	
+    
+    if(length>=13 && length<=32)
+    {
+    	check=1;
+    	for(i=0 ; i<length ; i++)
+    	{
+    		if(birth_d[i]>=1 && birth_d[i]<=31)
+    		{
+    			dayck=1;
+			}
+		}
+		if(dayck==1)
 		{
-			if(s1[i].m!=2 && s1[i].m!=4)
+			for(i=0 ; i<length ; i++)
+    		{
+	    		if(birth_d[i]>=1 && birth_d[i]<=12)
+	    		{
+	    			monthck=1;
+				}
+			}
+			if(monthck==1)
 			{
-				if(s1[i].d>=1 && s1[i].d<=31)
+				count++;
+				for(i=0 ; i<length ; i++)
+    			{
+		    		if(birth_d[i]>1924 && birth_d[i]<2024)
+		    		{
+		    			yearck=1;
+					}
+				}
+				year==count;
+				if(yearck==1)
 				{
-					s1[i].age=2024-s1[i].y;
+					for(i=0 ; i<length ; i++)
+    			  	{
+			    		if(birth_d[i]>=1924 && birth_d[i]<=2024)
+			    		{
+			    			int leap ;
+							leap= year+=4;
+			    			leapyearck=1;
+						}
+					}
+					if(leapyearck=0)
+					{
+						printf("%d",birth_d);
+					}
+					else
+					{
+						printf("Enter year is a leapyear!");
+						goto start;
+					}
 				}
 				else
 				{
-					printf("In Valid 1 to 31 only\n");
-					goto st;	
+					printf("Enter valid year between 1924 to 2024");
+					goto start;
 				}
 			}
 			else
 			{
-				if(s1[i].m!=4)
-				{
-					if(s1[i].d>=1 && s1[i].d<=28)
-					{
-						s1[i].age=2024-s1[i].y;
-					}
-					else
-					{
-						printf("In Valid 1 to 28 only\n");
-						goto st;
-					}
-				}
-				else
-				{
-					if(s1[i].d>=1 && s1[i].d<=30)
-					{
-						s1[i].age=-2024-s1[i].y;
-					}
-					else
-					{
-						printf("In Valid Date 1 to 30 only\n");
-						goto st;
-					}
-				}		
+				printf("Enter valid month between jan- dec!!");
+				goto start;
 			}
 		}
 		else
 		{
-			printf("In Valid Month 1 to 12 only\n");
-			goto st;
+			printf("Enter valid day between 1 to 31");
+			goto start;
 		}
 	}
 	else
 	{
-		printf("In Valid Year 1924 to 2024 only\n");
-		goto st;
+		printf("Enter more then 13 char!");
+		goto start;
 	}
-	if(i!=n)
-	{
-		i++;
-		goto star;
+    
+    for(i=0 ; i<3 ; i++)
+    {
+    	printf("Name :");
+		scanf("%[^\n]s",name[i]);
+		fprintf(fp,"%s",name);
+		
+		int age;
+		printf("Enter age:");
+		scanf("%d",&age[i]);
+		fprintf(fp,"%d",age);
+		
+		int birth_d[50];
+		printf("Enter birthdate :");
+		scanf("%d",&birth_d);
+		fprintf(fp,"%d",birth_d);
+		
+		printf("\n\n");
+		
+    	printf("------BIRTHDATE_FORM-----");
+    	fprintf(b1"------BIRTHDATE_FORM-----");
+
+    	printf("\nName\t\t: %s",b1.name[i]);
+    	fprintf(b1,"\nName\t\t: %s",name[i]);
+    	printf("\nBirthdate\t: %d/%d/%d",b1.day[i],b1.month[i],b1.year[i]);
+    	fprintf(b1,"Birthdate\t: %d/%d/%d",b1.day[i],b1.month[i],b1.year[i]);
+    	printf("\nAge\t\t: %d",b1.age[i]);
+    	fprintf(b1,"Age\t\t: %d",b1.age[i]);
 	}
-	int j;
-	for(j=0; j<=n; j++)
-	{
-		printf("\nForm Is [%d]\n\n",j+1);
-		printf("Name : %s\n",s1[j].name);
-		printf("Birth Date : %d/%d/%d\n",s1[j].d,s1[j].m,s1[j].y);
-		printf("Age : %d Year\n",s1[j].age);
-		fprintf(ok,"\nForm Is [%d]\n\n",j+1);
-		fprintf(ok,"Name : %s\n",s1[j].name);
-		fprintf(ok,"Birth Date : %d/%d/%d\n",s1[j].d,s1[j].m,s1[j].y);
-		fprintf(ok,"Age : %d Year\n",s1[j].age);
-	}
+    
+}
+
+main()
+{
+	Birthdateform();
 }
