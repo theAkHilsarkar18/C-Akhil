@@ -1,9 +1,0 @@
- 
-       User infomation [1]   
-   Name : a
- 
-       User infomation [2]   
-   Name : b
- 
-       User infomation [3]   
-   Name : c
